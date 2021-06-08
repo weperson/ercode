@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100vw;
+			height: 100vh;
+		}
+		.header{
+			padding-top: 6vh;
+			width: 100vw;
+			/*height: 20vh;*/
+			text-align: center;
+		}
+		.header img{
+			width: 20%;
+		}
+		.numTitle{
+			margin: 10px 0;
+			text-align: center;
+			font-size: 2.4em;
+			color: #101010;
+		}
+		.numTitle2{
+			text-align: center;
+			font-size: 2em;
+			color: #c0c0c0;
+		}
+		.centerTitle{
+			margin: 4vh 0 15vh;
+			text-align: left;
+			font-size: 2em;
+			color: #101010;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			flex-direction: column;
+		}
+		.centerTitle p{
+			width: 88%;
+			margin-bottom: 28px;
+			text-align: left;
+			color: #c0c0c0;
+			font-size: 1.2em;
+		}
+		.buttonContainer{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.buttonDiv{
+			width: 200px;
+			height: 60px;
+			border-radius: 6px;
+			border: 1px solid #04BE02;
+			background: #04BE02;
+			text-align: center;	
+			line-height: 60px;
+			color: #ffffff;
+			padding: 5px 36px;
+			font-size: 1.8em;
+		}
+		.fenge{
+			margin: 4vh 0;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+		.line{
+			width: 88%;
+			border-bottom: 1px solid #c0c0c0;
+		}
+		.hidden{
+			display: none;
+		}
+		.show{
+			display: block;
+		}
+		#tab2{
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			flex-direction: column;
+		}
+		#tab2 p{
+			font-size: 2.4em;
+			width: 92%;
+			text-align: center;
+			margin: 1vh 0 2vh;
+		}
+		#tab2 img{
+			width: 70%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<img src="./images/logo.jpg">
+		</div>
+		<div class="numTitle">
+			真人情侣头像交流群
+		</div>
+		<div class="numTitle2">
+			(共162人)
+		</div>
+		<div class="fenge">
+			<div class="line"></div>
+		</div>
+		<div class="show" id="tabContainer1">
+			<div id="tab1">
+				<div class="centerTitle">
+					<p>
+						1.你需要实名验证后才能扫码进群，可绑定银行卡进行验证。
+					</p>
+					<p>
+						2.为维护微信平台绿色网络环境，请勿在群里传播违法违规内容。
+					</p>
+					<p>
+						3.该群以绑定唯一指定公众号，可前往群内进行访问关注。
+					</p>
+
+				</div>
+				<div class="buttonContainer">
+					<div class="buttonDiv" id="joinQunliao">
+						加入群聊
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="hidden" id="tabContainer2">
+			<div id="tab2">
+				<p>长按识别二维码，关注公众号发送"进群"</p>
+				<img src="./images/erwei.jpg">
+			</div>
+			
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		window.onload = ()=>{
+			let isClickStatus = true
+			let butDiv = document.getElementById('joinQunliao')
+			let tab1 = document.getElementById('tab1')
+			let tab2 = document.getElementById('tab2')
+			if(butDiv){
+				butDiv.onclick = function(){
+					isClickStatus = false
+					document.getElementById('tabContainer1').className ='hidden'
+					document.getElementById('tabContainer2').className ='show'
+				}
+			}
+		}
+	</script>
+</body>
+</html>
